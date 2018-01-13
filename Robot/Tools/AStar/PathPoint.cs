@@ -1,0 +1,25 @@
+namespace HSGameEngine.Tools.AStar
+{
+
+    /// 2D整型坐标点
+    public struct Point2D {
+        public int X,
+                   Y;
+        public Point2D(int x, int y) {
+            X = x;
+            Y = y;
+        }
+    }
+
+    /// 3D整型坐标点
+    public struct Point3D {
+        public int X,
+                   Y,
+                   Z;
+        public Point3D(int x, int y, int z) {
+            X = x;
+            Y = y;
+            Z = z;
+        }
+    }
+}

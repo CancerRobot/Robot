@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3EDB04A5-BE71-4440-AD98-10587990C46A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Robot</RootNamespace>
+    <AssemblyName>Robot v1.5</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Designbolts-Monsters-University-Monsters-Squishy-Running.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="protobuf-net">
+      <HintPath>.\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="zlib.net, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\zlib.net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DataHelper.cs" />
+    <Compile Include="Logic\ChuanQiUtils.cs" />
+    <Compile Include="Logic\Commands.cs" />
+    <Compile Include="Logic\Global.cs" />
+    <Compile Include="Protocol\TCPConsts.cs" />
+    <Compile Include="Protocol\TCPInPacket.cs" />
+    <Compile Include="Protocol\TCPInPacketPool.cs" />
+    <Compile Include="Protocol\TCPOutPacket.cs" />
+    <Compile Include="Protocol\TCPOutPacketPool.cs" />
+    <Compile Include="Protocol\TCPPolicy.cs" />
+    <Compile Include="Protocol\UserLoginToken.cs" />
+    <Compile Include="RobotClient.cs" />
+    <Compile Include="RobotClientMgr.cs" />
+    <Compile Include="Server\TCPClient.cs" />
+    <Compile Include="Server\TCPClientPool.cs" />
+    <Compile Include="Server\TCPCmdHandler.cs" />
+    <Compile Include="Server\TCPRandKey.cs" />
+    <Compile Include="ShowMove.xaml.cs">
+      <DependentUpon>ShowMove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TCP\BufferManager.cs" />
+    <Compile Include="TCP\SocketAsyncEventArgsPool.cs" />
+    <Compile Include="TCP\SocketHelper.cs" />
+    <Compile Include="TCP\SocketListener.cs" />
+    <Compile Include="Tools\AesHelper.cs" />
+    <Compile Include="Tools\AStarEx\ANode.cs" />
+    <Compile Include="Tools\AStarEx\AStar.cs" />
+    <Compile Include="Tools\AStarEx\BinaryStack.cs" />
+    <Compile Include="Tools\AStarEx\NodeGrid.cs" />
+    <Compile Include="Tools\AStar\IPathFinder.cs" />
+    <Compile Include="Tools\AStar\PathFinder.cs" />
+    <Compile Include="Tools\AStar\PathFinderFast.cs" />
+    <Compile Include="Tools\AStar\PathPoint.cs" />
+    <Compile Include="Tools\AStar\PriorityQueueB.cs" />
+    <Compile Include="Tools\CRC32.cs" />
+    <Compile Include="Tools\DataHelper.cs" />
+    <Compile Include="Tools\LogManager.cs" />
+    <Compile Include="Tools\MD5.cs" />
+    <Compile Include="Tools\MD5Helper.cs" />
+    <Compile Include="Tools\MD5Managed.cs" />
+    <Compile Include="Tools\RC4Helper.cs" />
+    <Compile Include="Tools\SHA1Helper.cs" />
+    <Compile Include="Tools\StringEncrypt.cs" />
+    <Compile Include="Tools\StringUtil.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ShowMove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Designbolts-Monsters-University-Monsters-Squishy-Running.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="Robot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Robot"
+        mc:Ignorable="d"
+        Title="Robot v1.0" Height="250" Width="500">
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Label x:Name="label" Content="start ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="23" Width="52"/>
+            <Label x:Name="label_Copy" Content="end ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="23" Width="48"/>
+            <Label x:Name="label_Copy1" Content="Server IP" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="23" Width="60"/>
+            <Label x:Name="label1" Content="MapCode" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28" Width="66"/>
+            <Label x:Name="label2" Content="MapSize" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="29" Width="66"/>
+
+        </StackPanel>
+        <StackPanel>
+            <TextBox x:Name="txtStartID" HorizontalAlignment="Left" Height="23" Margin="72,10,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120" />
+            <TextBox x:Name="txtEndID" HorizontalAlignment="Left" Height="23" Margin="72,10,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120" />
+            <TextBox x:Name="txtIP" HorizontalAlignment="Left" Height="23" Margin="72,10,0,0" TextWrapping="Wrap" Text="192.168.1.16" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtMapCode" HorizontalAlignment="Left" Height="23" Margin="72,10,0,0" TextWrapping="Wrap" Text="10100" VerticalAlignment="Top" Width="120" />
+            <TextBox x:Name="txtMapSize" HorizontalAlignment="Left" Height="23" Margin="72,10,0,0" TextWrapping="Wrap" Text="300" VerticalAlignment="Top" Width="120" />
+
+        </StackPanel>
+
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="12,179,0,0" VerticalAlignment="Top" Width="40" Height="28" Click="OnStart"/>
+        <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" Margin="57,179,0,0" VerticalAlignment="Top" Width="85" Height="28" Click="OnPause"/>
+        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="147,179,0,0" VerticalAlignment="Top" Width="40" Height="28" Click="OnStop" />
+
+        <ListBox x:Name="lstShow" Grid.Column="2" Grid.RowSpan="2"/>
+
+    </Grid>
+</Window>
